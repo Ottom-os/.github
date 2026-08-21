@@ -1,0 +1,18 @@
+name: Question
+description: Ask the maintainers. Discussions are usually better.
+title: "[Q] "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Be specific. Link to the code or docs you already read.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What have you already tried?
+    validations:
+      required: true

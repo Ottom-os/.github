@@ -1,0 +1,63 @@
+name: Bug Report
+description: Something is broken. Prove it.
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Fill every field. Incomplete bugs get auto-labeled `needs-info`.
+  - type: textarea
+    id: what
+    attributes:
+      label: What broke?
+      description: One sentence. The symptom, not your theory.
+      placeholder: "The dashboard 500s when I click Fleet."
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Steps, commands, or curl that anyone can run to see the bug.
+      placeholder: "1. git clone ... 2. python server.py 3. curl localhost:4860/v5"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened?
+      description: Paste full error output. No screenshots of text.
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Python version, relevant package versions, commit SHA.
+      placeholder: "Linux 6.8, Python 3.13.5, hermes-agent@abc123"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / stack trace
+      description: Full traceback. Use a code block.
+      render: shell
+    validations:
+      required: false
+  - type: checkboxes
+    id: searched
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched existing issues and this is not a duplicate
+          required: true
+        - label: I am running the latest commit on main
+          required: true

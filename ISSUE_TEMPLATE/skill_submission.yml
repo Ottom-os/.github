@@ -1,0 +1,55 @@
+name: Skill Submission
+description: Propose a new skill for the Foundry. Proof-of-battle required.
+title: "[SKILL] "
+labels: ["skill", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The Foundry standard is ruthless: bring cryptographic proof of utility, or stay invisible.
+  - type: input
+    id: name
+    attributes:
+      label: Skill name
+      placeholder: "patch-safety"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What does it do?
+      description: One sentence. The trigger and the behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: battle
+    attributes:
+      label: Proof-of-battle
+      description: What real incident forged this skill? Link to the issue, incident report, or PR.
+    validations:
+      required: true
+  - type: textarea
+    id: telemetry
+    attributes:
+      label: Telemetry
+      description: Executions tracked, success rate, cost savings, time window. Numbers, not adjectives.
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety attestations
+      description: What does it NOT do? What data does it touch? Known limitations.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This skill has run in production for at least 7 days
+          required: true
+        - label: I have included or will include a Proof Object (proof-object.json)
+          required: true
+        - label: The skill contains no credentials or personal data
+          required: true
